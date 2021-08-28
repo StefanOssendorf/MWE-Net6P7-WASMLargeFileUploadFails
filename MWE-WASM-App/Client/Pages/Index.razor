@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<InputFile OnChange="@LoadFiles" />
+
+@if (!IsUploaded.HasValue)
+{
+	<em>No file uploaded yet.</em>
+
+}else if(IsUploaded.Value)
+{
+	<em>File uploaded with success.</em>
+}
+else
+{
+	<em>File upload failed!</em>
+}
