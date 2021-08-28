@@ -1,0 +1,53 @@
+blazor Loaded 8.79 MB resources
+This application was built with linking (tree shaking) disabled. Published applications will be significantly smaller. blazor.webassembly.js:1:43559
+mono_wasm_runtime_ready fe00e07a-5519-4dfe-b35a-f867dbaf2e28 dotnet.6.0.0-preview.7.21377.19.js:1:129636
+Uncaught (in promise) Error: System.OutOfMemoryException: Out of memory
+   at System.IO.MemoryStream.set_Capacity(Int32 value) in System.Private.CoreLib.dll:token 0x60058b3+0x51
+   at System.IO.MemoryStream.EnsureCapacity(Int32 value) in System.Private.CoreLib.dll:token 0x60058a9+0x55
+   at System.IO.MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in System.Private.CoreLib.dll:token 0x60058c1+0x4d
+   at System.Net.Http.HttpContent.LimitMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in System.Net.Http.dll:token 0x60001b2+0x7
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken) in System.Private.CoreLib.dll:token 0x60058c4+0x1b
+--- End of stack trace from previous location ---
+   at System.IO.Stream.<CopyToAsync>g__Core|29_0(Stream source, Stream destination, Int32 bufferSize, CancellationToken cancellationToken) in System.Private.CoreLib.dll:token 0x600560e+0xac
+   at System.Net.Http.StreamToStreamCopy.<CopyAsync>g__DisposeSourceAsync|1_0(Task copyTask, Stream source) in System.Net.Http.dll:token 0x60002dd+0x64
+   at System.Net.Http.HttpContent.<CopyToAsync>g__WaitAsync|56_0(ValueTask copyTask) in System.Net.Http.dll:token 0x60001af+0x69
+   at System.Net.Http.MultipartContent.SerializeToStreamAsyncCore(Stream stream, TransportContext context, CancellationToken cancellationToken) in System.Net.Http.dll:token 0x6000280+0x2e7
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer) in System.Net.Http.dll:token 0x6000199+0x99
+   at System.Net.Http.HttpContent.<WaitAndReturnAsync>d__82`2[[System.Net.Http.HttpContent, System.Net.Http, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a],[System.Byte[], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].MoveNext() in System.Net.Http.dll:token 0x60001db+0x64
+   at System.Net.Http.BrowserHttpHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) in System.Net.Http.dll:token 0x6000376+0x241
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken) in System.Net.Http.dll:token 0x600013b+0x1b7
+   at MWE_WASM_App.Client.Pages.FileUpload2.OnInputFileChange(InputFileChangeEventArgs e) in e:\Programming\Github\MWE-Net6P7-WASMLargeFileUploadFails\MWE-WASM-App\Client\Pages\FileUpload2.razor:line 101
+   at Microsoft.AspNetCore.Components.ComponentBase.CallStateHasChangedOnAsyncCompletion(Task task) in Microsoft.AspNetCore.Components.dll:token 0x60000a5+0x7e
+    endInvokeDotNetFromJS http://localhost:5000/_framework/blazor.webassembly.js:1
+    dt http://localhost:5000/_framework/blazor.webassembly.js:1
+    ut http://localhost:5000/_framework/blazor.webassembly.js:1
+    _mono_wasm_invoke_js_blazor http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    _mono_background_exec http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    pump_message http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    setTimeout handler*_schedule_background_exec http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    _mono_wasm_invoke_method http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS https://mono-wasm.invalid/managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS:16
+    endInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    promise callback*beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    ut http://localhost:5000/_framework/blazor.webassembly.js:1
+    _mono_wasm_invoke_js_blazor http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    _mono_wasm_invoke_method http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS https://mono-wasm.invalid/managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS:16
+    endInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    promise callback*beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    ut http://localhost:5000/_framework/blazor.webassembly.js:1
+    _mono_wasm_invoke_js_blazor http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    _mono_wasm_invoke_method http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS https://mono-wasm.invalid/managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS:16
+    endInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    promise callback*beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    ut http://localhost:5000/_framework/blazor.webassembly.js:1
+    _mono_wasm_invoke_js_blazor http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    _mono_wasm_invoke_method http://localhost:5000/_framework/dotnet.6.0.0-preview.7.21377.19.js:1
+    managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS https://mono-wasm.invalid/managed__Microsoft_AspNetCore_Components_WebAssembly__Microsoft_AspNetCore_Components_WebAssembly_Services_DefaultWebAssemblyJSRuntime_EndInvokeJS:16
+    endInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+    beginInvokeJSFromDotNet http://localhost:5000/_framework/blazor.webassembly.js:1
+blazor.webassembly.js:1:3473
